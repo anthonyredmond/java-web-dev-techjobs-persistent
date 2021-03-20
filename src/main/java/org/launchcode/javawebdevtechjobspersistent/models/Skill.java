@@ -11,6 +11,13 @@ public class Skill extends AbstractEntity {
     @Size (min = 4, max = 50)
     private String description;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Skill() {}
 
