@@ -33,6 +33,7 @@ private SkillRepository skillRepository;
     public String index(Model model) {
 
         model.addAttribute("title", "My Jobs");
+
         model.addAttribute("jobs",jobRepository.findAll());
         return "index";
     }
@@ -62,12 +63,17 @@ private SkillRepository skillRepository;
             return "add";
 
         }
-        List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
-        newJob.setSkills(skillObjs);
         Employer employer = employerRepository.findById(employerId).orElse(new Employer());
         newJob.setEmployer(employer);
 
+        List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
+        newJob.setSkills(skillObjs);
+
+
     jobRepository.save(newJob);
+
+    //Debugging
+        jobRepository.findAll();
         return "redirect:";
     }
 
