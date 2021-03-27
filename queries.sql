@@ -10,5 +10,5 @@ DROP TABLE job;
 ## Part 4: Test it with SQL
 SELECT *
 FROM skill INNER JOIN job_skills ON skill.id=skills_id
-ORDER BY skill.id ASC;
+ORDER BY skill.name ASC;
 
