@@ -11,7 +11,7 @@ import java.util.List;
 public class Skill extends AbstractEntity {
 
     @NotBlank (message="skill description")
-    @Size (min = 4, max = 50)
+    @Size (min = 4, max = 255)
     private String description;
 
     @ManyToMany (mappedBy="skills")
